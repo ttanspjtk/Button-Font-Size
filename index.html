@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Change Font Size</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="button">
+            <span class="btn active" onclick="document.getElementById('text').style.fontSize = '1em'">A</span>
+            <span class="btn" onclick="document.getElementById('text').style.fontSize = '1.25em'">A</span>
+            <span class="btn" onclick="document.getElementById('text').style.fontSize = '1.5em'">A</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content" id="text">
+            <h2>Change Font Size</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad ea, voluptates cupiditate quisquam nam iure. Incidunt consectetur dignissimos nisi architecto dolor, debitis dolorem modi. Autem nobis nemo exercitationem voluptas quod, eius reprehenderit laudantium ducimus dolorem itaque nam, odit officiis tempora ipsam. Porro eius voluptatibus ut molestias reprehenderit fugiat, commodi quisquam?</p>
+        </div>
+    </div>
+
+    <!-- javaScript -->
+    <script>
+        let button = document.querySelector('.button');
+        let btn = button.querySelectorAll('.btn');
+        for (var i = 0; i < btn.length; i++) {
+            btn[i].addEventListener('click', function() {
+                let current = document.getElementsByClassName('active');
+                current[0].className = current[0].className.replace("active", "");
+                this.className += " active";
+            })
+        }
+    </script>
+</body>
+</html>
